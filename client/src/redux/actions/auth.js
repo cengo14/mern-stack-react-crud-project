@@ -26,7 +26,7 @@ export const loginAction = (authData) => async (dispatch) => {
         const { data } = await api.post("/login", authData);
         dispatch({ type: "LOGIN", payload: data });
         toast.success("Kayıt Başarılı");
-        window.location.href = "/login";
+        window.location.href = "/";
     } catch (error) {
         toast.error("Bir hata oluştu" + " " + error.response.data.msg);
     }

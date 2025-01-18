@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginAction, registerAction } from "../redux/actions/auth";
+import { useNavigate } from "react-router-dom";
 const Auth = () => {
   const [signUp, setSignUp] = useState(true);
   const [authData, setAuthData] = useState({
@@ -8,6 +9,7 @@ const Auth = () => {
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -28,7 +30,7 @@ const Auth = () => {
       <div className="flex flex-col w-1/3">
         <h1 className="text-3xl text-gray-700 font-bold my-5">CIVILDAŞ</h1>
         <div className=" bg-white p-2 rounded-md shadow hover:shadow-lg">
-          <h2 className="text-amber-600 text-xl font-semibold">
+          <h2 className="text-gray-600 text-xl font-semibold">
             {signUp ? "Üyelik Oluştur" : "Giriş Yapın"}
           </h2>
           <div className="flex flex-col space-y-3 my-5">
@@ -72,7 +74,7 @@ const Auth = () => {
           </div>
           <div
             onClick={authFunc}
-            className="w-full p-2 text-center bg-amber-600 text-white rounded-md cursor-pointer hover:bg-amber-700 "
+            className="w-full p-2 text-center bg-gray-600 text-white rounded-md cursor-pointer hover:bg-gray-700 "
           >
             {signUp ? "Kayıt Ol" : "Giriş Yap"}
           </div>

@@ -14,8 +14,8 @@ const HomeCard = ({ post }) => {
     dispatch({ type: "MODAL", payload: { open: true, updateId: id } });
   };
   return (
-    <div className="relative md:w-1/4 border p-3 rounded-md bg-amber-600/30 shadow-md hover:shadow-md transition duration-300 cursor-pointer m-5">
-      <h4 className="font-bold text-xl">{post?.title}</h4>
+    <div className="relative w-[320px] h-[160px] border p-3 rounded-md bg-gray-600/30  transition-all duration-300 cursor-pointer m-5 shadow hover:shadow-md hover:scale-105 ">
+      <h4 className="font-bold text-xl text-blue-600">{post?.title}</h4>
       <p className="text-sm text-gray-700">{post?.description}</p>
       <div className="flex justify-between items-center">
         <span className="text-xs text-gray-500">{post?.user}</span>
